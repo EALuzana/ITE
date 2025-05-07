@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Automation in the Digital Era</title>
+        <link rel="stylesheet" href="../styles/order.css" />
+      </head>
+<body>
+
+  <div class="nav">
+    <div class="nav-left">
+      <button onclick="location.href='../home.html'">Home</button>
+      <button onclick="location.href='../pages/robot.html'">Automation</button>
+      <button onclick="location.href='../pages/globe.html'">Internet</button>
+      <button onclick="location.href='../pages/education.html'">Education</button>
+      <button onclick="location.href='../pages/brain.html'">Technology</button>
+    </div>
+    <div class="nav-right">
+      <button onclick="location.href='order.html'">Want to learn more? Order the book HERE!</button>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <h2>Order Your Book</h2>
+    <form id="orderForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+      <label for="region">Region:</label>
+      <input type="text" id="region" name="region" required placeholder="Enter your region">
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required placeholder="Enter your city">
+
+      <label for="barangay">Barangay:</label>
+      <input type="text" id="barangay" name="barangay" required placeholder="Enter your barangay">
+
+      <label for="address">Address Information (Blk and Lot No., Unit No.):</label>
+      <input type="text" id="address" name="address" required placeholder="Enter block number, unit number">
+
+      <label for="books">Select Books:</label>
+      <div class="book-checkboxes">
+        <div class="book-option">
+          <label>
+            <input type="checkbox" class="book-checkbox" value="automation" data-price="1250">
+            <img src="../images/robot.png" class="book-image" alt="Automation Book">
+            <span>Automation (₱1250)</span>
+          </label>
+        </div>
+        <div class="book-option">
+          <label>
+            <input type="checkbox" class="book-checkbox" value="internet" data-price="1250">
+            <img src="../images/globe.png" class="book-image" alt="Internet Book">
+            <span>Internet (₱1250)</span>
+          </label>
+        </div>
+        <div class="book-option">
+          <label>
+            <input type="checkbox" class="book-checkbox" value="education" data-price="1250">
+            <img src="../images/education.png" class="book-image" alt="Education Book">
+            <span>Education (₱1250)</span>
+          </label>
+        </div>
+        <div class="book-option">
+          <label>
+            <input type="checkbox" class="book-checkbox" value="technology" data-price="1250">
+            <img src="../images/brain.png" class="book-image" alt="Technology Book">
+            <span>Technology (₱1250)</span>
+          </label>
+        </div>
+        <div class="book-option full-series">
+          <label>
+            <input type="checkbox" class="book-checkbox" value="full_series" data-price="4000">
+            <img src="../images/robot-earth.png" class="book-image" alt="Full Series">
+            <span>Full Series (₱4000)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="total-cost">Total Cost: ₱0</div>
+
+      <label for="payment">Payment Method:</label>
+      <select id="payment" name="payment" required>
+        <option value="cod">Cash on Delivery (COD)</option>
+        <option value="card">Debit/Credit Card</option>
+        <option value="ewallet">E-Wallet</option>
+      </select>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.book-checkbox');
+    const totalCostDisplay = document.querySelector('.total-cost');
+    
+    function updateTotalCost() {
+      let totalCost = 0;
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          totalCost += parseInt(checkbox.getAttribute('data-price'));
+        }
+      });
+      totalCostDisplay.textContent = `Total Cost: ₱${totalCost}`;
+    }
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', updateTotalCost);
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const selectedBooks = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+      const paymentMethod = document.getElementById('payment').value;
+
+      let totalCost = 0;
+      selectedBooks.forEach(book => {
+        const bookPrice = document.querySelector(`input[value="${book}"]`).getAttribute('data-price');
+        totalCost += parseInt(bookPrice);
+      });
+
+      if (paymentMethod === 'card' || paymentMethod === 'ewallet') {
+        alert('Sorry, Debit/Credit Card and E-Wallet options are not currently working.');
+        return;
+      }
+
+      const booksMessage = selectedBooks.length === 1
+        ? `${selectedBooks[0].replace('_', ' ')}`
+        : selectedBooks.map(b => b.replace('_', ' ')).join(', ');
+
+      const confirmationMessage = `
+        <div class="confirmation-message">
+          <h2>Thank you, ${name}!</h2>
+          <p>Your order for the ${booksMessage} book(s) has been successfully placed.</p>
+          <p>Total Cost: ₱${totalCost}</p>
+        </div>
+      `;
+      
+      document.querySelector('.wrapper').innerHTML = confirmationMessage;
+    });
+  </script>
+
+</body>
+</html>
