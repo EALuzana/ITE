@@ -1,12 +1,11 @@
 body {
-  background-image: url('https://cdn.mos.cms.futurecdn.net/VFLt5vHV7aCoLrLGjP9Qwm.jpg');
     font-family: Arial, sans-serif;
     background-color: #e7d9cf;
     margin: 0;
   }
 
   .nav {
-    background-color: #90ee90;
+    background-color: #222;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +23,8 @@ body {
 
   .nav-left button,
   .nav-right button {
-    background-color: #90ee90;
+    background-color: #222;
+    color: white;
     border: none;
     padding: 10px 20px;
     font-weight: bold;
@@ -32,11 +32,12 @@ body {
   }
 
   .nav-right button {
-    color: green;
+    color: #222;
   }
 
+
   .wrapper {
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     margin: 40px auto;
     padding: 40px;
     max-width: 800px;
@@ -111,7 +112,7 @@ body {
   }
 
   button {
-    background-color: #90ee90;
+    background-color: #222;
     border: none;
     padding: 10px 20px;
     font-weight: bold;
@@ -120,7 +121,7 @@ body {
   }
 
   button:hover {
-    background-color: #78d778;
+    background-color: #222;
   }
 
   .confirmation-message {

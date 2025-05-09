@@ -5,45 +5,88 @@
         <link rel="stylesheet" href="home.css" />
       </head>
 <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/LOGO DIGIERA.png" alt="Logo">
+      </div>
 
-  <h1>The Digital Era of Learning</h1>
+    <div class="nav-buttons">
+      <div class="nav-item" id="booksDropdown">
+        <button class="nav-button" onclick="toggleDropdown()">BOOKS ▼</button>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="pages/robot.html">Automation</a>
+          <a href="pages/globe.html">Internet</a>
+          <a href="pages/education.html">Education</a>
+          <a href="pages/brain.html">Technology</a>
+        </div>
+      </div>
 
-  <div class="top-section">
-    <div>
-      <a href="pages/robot.html">
-        <img src="images/robot.png" alt="Robot Arm">
-      </a>
-      <div class="see-more">
-        <a href="pages/robot.html">See more</a>
+      <div class="nav-item">
+        <button class="nav-button" onclick="alert('No available promos at the moment.')">PROMOS</button>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-button" onclick="window.location.href='learnmore.html'">LEARN MORE</button>
+      </div>
+
+      <div class="nav-item">
+        <span onclick="location.href='pages/order.html'">🛒</span>
       </div>
     </div>
-    <div>
-      <a href="pages/globe.html">
-        <img src="images/globe.png" alt="Digital Globe">
-      </a>
-      <div class="see-more">
-        <a href="pages/globe.html">See more</a>
+  </nav>
+
+  <br>
+  <br>
+  <h1 style="text-align: left; margin-left: 80px;">POPULAR CHOICE</h1>
+  
+
+  <div class="slideshow-wrapper">
+    <div class="slideshow-container">
+      <div class="slide active">
+        <a href="pages/robot.html" class="image-link">
+          <img src="images/robot.png" alt="Slide 1">
+          <div class="label-overlay">ROBOTICS</div>
+        </a>
+        <div class="slide-text">
+          <h2>BOOK PREVIEW:</h2>
+          <p>Automation in the Digital Era explores how emerging technologies like AI, robotics, and cloud computing are reshaping everyday life and work. From smart factories to virtual healthcare, automation is boosting speed, accuracy, and innovation across industries. While it brings major advantages like lower costs and fewer errors, it also raises challenges like job displacement and ethical concerns. The book highlights a future where humans and machines work together, pointing toward a tech-driven but collaborative world.</p>
+        </div>
       </div>
-    </div>
-    <div>
-      <a href="pages/education.html">
-        <img src="images/education.png" alt="Digital Education">
-      </a>
-      <div class="see-more">
-        <a href="pages/education.html">See more</a>
+      <div class="slide">
+        <a href="pages/globe.html" class="image-link">
+          <img src="images/globe.png" alt="Slide 2">
+          <div class="label-overlay">INTERNET</div>
+        </a>
+        <div class="slide-text">
+          <h2>BOOK PREVIEW:</h2>
+          <p>Internet and the Power of Connectivity dives into how the internet has transformed from a simple information-sharing tool into a powerful global connector. It explains how real-time communication, smart devices, and cloud technology are reshaping life, work, and learning. While connectivity enables global progress, it also highlights digital divides and cybersecurity risks. The book explores a future powered by 5G, AI, and satellite internet—where being connected isn’t just convenient, it’s essential.</p>
+        </div>
       </div>
-    </div>
-    <div>
-      <a href="pages/brain.html">
-        <img src="images/brain.png" alt="Tech Brain">
-      </a>
-      <div class="see-more">
-        <a href="pages/brain.html">See more</a>
+      <div class="slide">
+        <a href="pages/education.html" class="image-link">
+          <img src="images/education.png" alt="Slide 3">
+          <div class="label-overlay">EDUCATION</div>
+        </a>
+        <div class="slide-text">
+          <h2>BOOK PREVIEW:</h2>
+          <p>The Digital Era of Learning: Education Reimagined explores how technology is reshaping education into a more flexible, accessible, and personalized experience. From online courses and AI-powered tools to global virtual classrooms, learning today happens anywhere, anytime. While digital education offers huge advantages like scalability and engagement, it also faces challenges like access gaps and teacher readiness. The future points to a hybrid model where lifelong, tech-driven learning becomes the norm.</p>
+        </div>
       </div>
+      <div class="slide">
+        <a href="pages/brain.html" class="image-link">
+          <img src="images/brain.png" alt="Slide 4">
+          <div class="label-overlay">TECHNOLOGY</div>
+        </a>
+        <div class="slide-text">
+          <h2>BOOK PREVIEW:</h2>
+          <p>Driven by Technology explores how rapid tech innovation, like AI, cloud computing, and IoT is transforming every part of life, from work and education to health and communication. Technology has become a core part of daily living, fueling progress and global connection. While it offers speed, convenience, and smarter systems, it also introduces challenges like digital inequality, privacy risks, and overreliance. The future is all about smarter, faster, and more immersive tech that continues to reshape our world.</p>
+        </div>
+      </div>
+  
     </div>
   </div>
-
-  <h2>The Digital Era of Learning</h2>
+  <br>
+  <h1>The Digital Era of Learning</h1>
 
   <div class="content-section">
     <div class="text-box">
@@ -57,6 +100,41 @@
       <p><a href="#">Welcome to The Digital Renaissance of Learning, a hub designed to bridge the gap between education and technology. As the world rapidly shifts toward digital transformation, this platform serves as a guide for students, educators, and tech enthusiasts to embrace the power of Information Technology Education (ITE).</a></p>
     </div>
   </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+    document.addEventListener("click", function(event) {
+      const dropdown = document.getElementById("dropdownMenu");
+      const button = document.querySelector("#booksDropdown button");
+
+      if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 4500);
+</script>
+
 
 </body>
 </html>
