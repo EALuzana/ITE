@@ -1,6 +1,6 @@
 ## **SY: (2024 - 2025) - 2nd Semester**
 # ITE 011 - Computer Fundamentals
-## Group 2
+## Group 2 - `The Digital Era`
 
 
 In this project,
