@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <title>Automation in the Digital Era</title>
-        <link rel="stylesheet" href="$content.css" />
-        <link rel="stylesheet" href="$nav-styles.css" />
-      </head>
+  <title>Automation in the Digital Era</title>
+  <link rel="stylesheet" href="$content.css" />
+  <link rel="stylesheet" href="$nav-styles.css" />
+</head>
+
 <body>
 
   <div class="nav">
@@ -90,7 +92,7 @@
   <script>
     const checkboxes = document.querySelectorAll('.book-checkbox');
     const totalCostDisplay = document.querySelector('.total-cost');
-    
+
     function updateTotalCost() {
       let totalCost = 0;
       checkboxes.forEach(checkbox => {
@@ -99,14 +101,14 @@
         }
       });
       totalCostDisplay.textContent = `Total Cost: ₱${totalCost}`;
-    
+
     }
 
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', updateTotalCost);
     });
 
-    document.getElementById('orderForm').addEventListener('submit', function(event) {
+    document.getElementById('orderForm').addEventListener('submit', function (event) {
       event.preventDefault();
       const name = document.getElementById('name').value;
       const selectedBooks = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
@@ -134,10 +136,11 @@
           <p>Total Cost: ₱${totalCost}</p>
         </div>
       `;
-      
+
       document.querySelector('.wrapper').innerHTML = confirmationMessage;
     });
   </script>
 
 </body>
+
 </html>

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Automation in the Digital Era</title>
-        <link rel="stylesheet" href="$home.css" />
-      </head>
+
+<head>
+  <title>Automation in the Digital Era</title>
+  <link rel="stylesheet" href="$home.css" />
+</head>
+
 <body>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="_LOGO DIGIERA.png" alt="Logo">
-      </div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="_LOGO DIGIERA.png" alt="Logo">
+    </div>
 
     <div class="nav-buttons">
       <div class="nav-item" id="booksDropdown">
@@ -38,7 +40,7 @@
   <br>
   <br>
   <h1 style="text-align: left; margin-left: 80px;">POPULAR SELECTION</h1>
-  
+
 
   <div class="slideshow-wrapper">
     <div class="slideshow-container">
@@ -49,7 +51,11 @@
         </a>
         <div class="slide-text">
           <h2>BOOK PREVIEW:</h2>
-          <p>Automation in the Digital Era explores how emerging technologies like AI, robotics, and cloud computing are reshaping everyday life and work. From smart factories to virtual healthcare, automation is boosting speed, accuracy, and innovation across industries. While it brings major advantages like lower costs and fewer errors, it also raises challenges like job displacement and ethical concerns. The book highlights a future where humans and machines work together, pointing toward a tech-driven but collaborative world.</p>
+          <p>Automation in the Digital Era explores how emerging technologies like AI, robotics, and cloud computing are
+            reshaping everyday life and work. From smart factories to virtual healthcare, automation is boosting speed,
+            accuracy, and innovation across industries. While it brings major advantages like lower costs and fewer
+            errors, it also raises challenges like job displacement and ethical concerns. The book highlights a future
+            where humans and machines work together, pointing toward a tech-driven but collaborative world.</p>
         </div>
       </div>
       <div class="slide">
@@ -59,7 +65,11 @@
         </a>
         <div class="slide-text">
           <h2>BOOK PREVIEW:</h2>
-          <p>Internet and the Power of Connectivity dives into how the internet has transformed from a simple information-sharing tool into a powerful global connector. It explains how real-time communication, smart devices, and cloud technology are reshaping life, work, and learning. While connectivity enables global progress, it also highlights digital divides and cybersecurity risks. The book explores a future powered by 5G, AI, and satellite internet—where being connected isn’t just convenient, it’s essential.</p>
+          <p>Internet and the Power of Connectivity dives into how the internet has transformed from a simple
+            information-sharing tool into a powerful global connector. It explains how real-time communication, smart
+            devices, and cloud technology are reshaping life, work, and learning. While connectivity enables global
+            progress, it also highlights digital divides and cybersecurity risks. The book explores a future powered by
+            5G, AI, and satellite internet—where being connected isn’t just convenient, it’s essential.</p>
         </div>
       </div>
       <div class="slide">
@@ -69,7 +79,11 @@
         </a>
         <div class="slide-text">
           <h2>BOOK PREVIEW:</h2>
-          <p>The Digital Era of Learning: Education Reimagined explores how technology is reshaping education into a more flexible, accessible, and personalized experience. From online courses and AI-powered tools to global virtual classrooms, learning today happens anywhere, anytime. While digital education offers huge advantages like scalability and engagement, it also faces challenges like access gaps and teacher readiness. The future points to a hybrid model where lifelong, tech-driven learning becomes the norm.</p>
+          <p>The Digital Era of Learning: Education Reimagined explores how technology is reshaping education into a
+            more flexible, accessible, and personalized experience. From online courses and AI-powered tools to global
+            virtual classrooms, learning today happens anywhere, anytime. While digital education offers huge advantages
+            like scalability and engagement, it also faces challenges like access gaps and teacher readiness. The future
+            points to a hybrid model where lifelong, tech-driven learning becomes the norm.</p>
         </div>
       </div>
       <div class="slide">
@@ -79,10 +93,14 @@
         </a>
         <div class="slide-text">
           <h2>BOOK PREVIEW:</h2>
-          <p>Driven by Technology explores how rapid tech innovation, like AI, cloud computing, and IoT is transforming every part of life, from work and education to health and communication. Technology has become a core part of daily living, fueling progress and global connection. While it offers speed, convenience, and smarter systems, it also introduces challenges like digital inequality, privacy risks, and overreliance. The future is all about smarter, faster, and more immersive tech that continues to reshape our world.</p>
+          <p>Driven by Technology explores how rapid tech innovation, like AI, cloud computing, and IoT is transforming
+            every part of life, from work and education to health and communication. Technology has become a core part
+            of daily living, fueling progress and global connection. While it offers speed, convenience, and smarter
+            systems, it also introduces challenges like digital inequality, privacy risks, and overreliance. The future
+            is all about smarter, faster, and more immersive tech that continues to reshape our world.</p>
         </div>
       </div>
-  
+
     </div>
   </div>
   <br>
@@ -90,14 +108,19 @@
 
   <div class="content-section">
     <div class="text-box">
-      <p><a href="$">Welcome to The Digital Renaissance of Learning, a platform dedicated to revolutionizing education through Information Technology.</a></p>
-      <p><a href="$">Our goal is to empower students, educators, and tech enthusiasts by providing innovative learning tools, industry insights, and cutting-edge resources.</a></p>
+      <p><a href="$">Welcome to The Digital Renaissance of Learning, a platform dedicated to revolutionizing education
+          through Information Technology.</a></p>
+      <p><a href="$">Our goal is to empower students, educators, and tech enthusiasts by providing innovative learning
+          tools, industry insights, and cutting-edge resources.</a></p>
     </div>
 
     <img src="_robot-earth.png" alt="Robot over Earth">
 
     <div class="text-box">
-      <p><a href="$">Welcome to The Digital Renaissance of Learning, a hub designed to bridge the gap between education and technology. As the world rapidly shifts toward digital transformation, this platform serves as a guide for students, educators, and tech enthusiasts to embrace the power of Information Technology Education (ITE).</a></p>
+      <p><a href="$">Welcome to The Digital Renaissance of Learning, a hub designed to bridge the gap between education
+          and technology. As the world rapidly shifts toward digital transformation, this platform serves as a guide for
+          students, educators, and tech enthusiasts to embrace the power of Information Technology Education (ITE).</a>
+      </p>
     </div>
   </div>
 
@@ -106,7 +129,7 @@
       const dropdown = document.getElementById("dropdownMenu");
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
     }
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
       const dropdown = document.getElementById("dropdownMenu");
       const button = document.querySelector("$booksDropdown button");
 
@@ -116,25 +139,26 @@
     });
 
     let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.slide');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) {
-        slide.classList.add('active');
-      }
-    });
-  }
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
 
-  setInterval(nextSlide, 4500);
-</script>
+    setInterval(nextSlide, 4500);
+  </script>
 
 
 </body>
+
 </html>
