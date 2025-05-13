@@ -3,18 +3,19 @@
 ## Group 2 - `The Digital Era`
 
 
-In this project,
+In this project, the files' names are arranged with a pattern.
 
-when the other file is in same folder, do:
+use prefix `_` when naming or using an image file:
 ```
-"file.png"
-"file.html"
-"file.css"
+"_brain.png"
+"_pic.jpg"
+"_new image.jpg"
 ```
-when the other file is not in the same folder, do:
+
+css files should have `$` in the file's 1st name:
 ```
-"../folder/file.png"
-"../folder/file.html"
-"../folder/file.css"
+"$nav.css"
+"$theme.html"
+"$style-a.html"
 ```
 
