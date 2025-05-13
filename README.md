@@ -1,3 +1,4 @@
+![TIP QC](https://www.tip.edu.ph/assets/headerfooter/tip-logo.png)
 ## **SY: (2024 - 2025) - 2nd Semester**
 # ITE 011 - Computer Fundamentals
 ## Group 2 - `The Digital Era`
