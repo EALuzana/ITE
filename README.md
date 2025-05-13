@@ -1,4 +1,4 @@
-![TIP QC](https://www.tip.edu.ph/assets/headerfooter/tip-logo.png)
+![TIP QC](https://www.eduopinions.com/wp-content/uploads/2022/11/Technological-Institute-of-the-Philippines-350x350.jpg)
 ## **SY: (2024 - 2025) - 2nd Semester**
 # ITE 011 - Computer Fundamentals
 ## Group 2 - `The Digital Era`
