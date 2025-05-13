@@ -2,22 +2,22 @@
 <html>
     <head>
         <title>Automation in the Digital Era</title>
-        <link rel="stylesheet" href="home.css" />
+        <link rel="stylesheet" href="$home.css" />
       </head>
 <body>
     <nav class="navbar">
       <div class="logo">
-        <img src="images/LOGO DIGIERA.png" alt="Logo">
+        <img src="_LOGO DIGIERA.png" alt="Logo">
       </div>
 
     <div class="nav-buttons">
       <div class="nav-item" id="booksDropdown">
         <button class="nav-button" onclick="toggleDropdown()">BOOKS ▼</button>
         <div class="dropdown-content" id="dropdownMenu">
-          <a href="pages/robot.html">Automation</a>
-          <a href="pages/globe.html">Internet</a>
-          <a href="pages/education.html">Education</a>
-          <a href="pages/brain.html">Technology</a>
+          <a href="robot.html">Automation</a>
+          <a href="globe.html">Internet</a>
+          <a href="education.html">Education</a>
+          <a href="brain.html">Technology</a>
         </div>
       </div>
 
@@ -30,7 +30,7 @@
       </div>
 
       <div class="nav-item">
-        <span onclick="location.href='pages/order.html'">🛒</span>
+        <span onclick="location.href='order.html'">🛒</span>
       </div>
     </div>
   </nav>
@@ -43,8 +43,8 @@
   <div class="slideshow-wrapper">
     <div class="slideshow-container">
       <div class="slide active">
-        <a href="pages/robot.html" class="image-link">
-          <img src="images/robot.png" alt="Slide 1">
+        <a href="robot.html" class="image-link">
+          <img src="_robot.png" alt="Slide 1">
           <div class="label-overlay">ROBOTICS</div>
         </a>
         <div class="slide-text">
@@ -53,8 +53,8 @@
         </div>
       </div>
       <div class="slide">
-        <a href="pages/globe.html" class="image-link">
-          <img src="images/globe.png" alt="Slide 2">
+        <a href="globe.html" class="image-link">
+          <img src="_globe.png" alt="Slide 2">
           <div class="label-overlay">INTERNET</div>
         </a>
         <div class="slide-text">
@@ -63,8 +63,8 @@
         </div>
       </div>
       <div class="slide">
-        <a href="pages/education.html" class="image-link">
-          <img src="images/education.png" alt="Slide 3">
+        <a href="education.html" class="image-link">
+          <img src="_education.png" alt="Slide 3">
           <div class="label-overlay">EDUCATION</div>
         </a>
         <div class="slide-text">
@@ -73,8 +73,8 @@
         </div>
       </div>
       <div class="slide">
-        <a href="pages/brain.html" class="image-link">
-          <img src="images/brain.png" alt="Slide 4">
+        <a href="brain.html" class="image-link">
+          <img src="_brain.png" alt="Slide 4">
           <div class="label-overlay">TECHNOLOGY</div>
         </a>
         <div class="slide-text">
@@ -90,14 +90,14 @@
 
   <div class="content-section">
     <div class="text-box">
-      <p><a href="#">Welcome to The Digital Renaissance of Learning, a platform dedicated to revolutionizing education through Information Technology.</a></p>
-      <p><a href="#">Our goal is to empower students, educators, and tech enthusiasts by providing innovative learning tools, industry insights, and cutting-edge resources.</a></p>
+      <p><a href="$">Welcome to The Digital Renaissance of Learning, a platform dedicated to revolutionizing education through Information Technology.</a></p>
+      <p><a href="$">Our goal is to empower students, educators, and tech enthusiasts by providing innovative learning tools, industry insights, and cutting-edge resources.</a></p>
     </div>
 
-    <img src="images/robot-earth.png" alt="Robot over Earth">
+    <img src="_robot-earth.png" alt="Robot over Earth">
 
     <div class="text-box">
-      <p><a href="#">Welcome to The Digital Renaissance of Learning, a hub designed to bridge the gap between education and technology. As the world rapidly shifts toward digital transformation, this platform serves as a guide for students, educators, and tech enthusiasts to embrace the power of Information Technology Education (ITE).</a></p>
+      <p><a href="$">Welcome to The Digital Renaissance of Learning, a hub designed to bridge the gap between education and technology. As the world rapidly shifts toward digital transformation, this platform serves as a guide for students, educators, and tech enthusiasts to embrace the power of Information Technology Education (ITE).</a></p>
     </div>
   </div>
 
@@ -108,7 +108,7 @@
     }
     document.addEventListener("click", function(event) {
       const dropdown = document.getElementById("dropdownMenu");
-      const button = document.querySelector("#booksDropdown button");
+      const button = document.querySelector("$booksDropdown button");
 
       if (!dropdown.contains(event.target) && !button.contains(event.target)) {
         dropdown.style.display = "none";
