@@ -1,5 +1,4 @@
-/* Merged CSS */
-
+/* Ramilo, Kim Jay */
 /* General body styles */
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +48,7 @@ h2 {
 .top-image img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
   border: 5px solid black;
   object-fit: cover;
 }
