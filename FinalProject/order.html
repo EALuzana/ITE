@@ -133,11 +133,51 @@
         ? `${selectedBooks[0].replace('_', ' ')}` //if 1, change _ with space
         : selectedBooks.map(b => b.replace('_', ' ')).join(', '); //else, still do the change but connect each value as 1 separated by ","
 
+      function generateTransactionNumber() { //generate random transac no. format is xxx-xx-xxx
+       const part1 = Math.floor(Math.random() * 900) + 100; // 100–999
+       const part2 = Math.floor(Math.random() * 90) + 10;   // 10–99
+       const part3 = Math.floor(Math.random() * 900) + 100; // 100–999
+
+       return `${part1}-${part2}-${part3}`;
+       }
+
+       const today = new Date();
+       const day = today.getDate(); //get the current date
+       const month = today.getMonth() + 1;
+       const year = today.getFullYear();
+
+       const customFormat = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`; //turn to string, and format of 2
+
+       const now = new Date(); //get todays info
+       let hours = now.getHours(); //get the hour in 24 hour format for today
+       const minutes = now.getMinutes().toString().padStart(2, '0'); //get the minute and make sure its 2 digit
+       const seconds = now.getSeconds().toString().padStart(2, '0'); //get seconds and make sure its 2 digit
+
+       const ampm = hours >= 12 ? 'PM' : 'AM'; //check if the hours is greater than 12, if yes PM if not AM 
+       hours = hours % 12; // Convert hour to 12-hour format
+       hours = hours ? hours : 12; // if hour is 0, change to 12
+
+       const currentTime = `${hours}:${minutes}:${seconds} ${ampm}`; //format
+
+       const vatable = (totalCost/ (1+0.12)).toFixed(2);
+       const vat = (totalCost - vatable).toFixed(2); 
       const confirmationMessage = `
         <div class="confirmation-message">
+          <p>----------This serves as your SALES INVOICE----------</p>
           <h2>Thank you, ${name}!</h2>
           <p>Your order for the ${booksMessage} book(s) has been successfully placed.</p>
-          <p>Total Cost: ₱${totalCost}</p>
+          <p><strong>Amount to be paid: ₱${totalCost}</strong></p>
+          <p>Date: ${customFormat}</p>
+          <p>Time: ${currentTime}</p>
+          <p>VATable: ${vatable}</p>
+          <p>VAT: ${vat}</p>
+          <p>------------------------------------------------------</p>
+          <p>Transaction Number: ${generateTransactionNumber()}</p>
+          <p>TID: 30043030 </p>
+          <p>Date Issued: 15/6/2022</p>
+          <p>Valid Until: 31/12/2029</p>
+          <p>PTU No.: F9809-WS9009-B1GD1CK</p>
+          <p>Valid Until: End of the World</p>
         </div>
       `;
 
