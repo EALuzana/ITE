@@ -45,35 +45,35 @@
       <div class="book-checkboxes">
         <div class="book-option">
           <label>
-            <input type="checkbox" class="book-checkbox" value="automation" data-price="1250">
+            <input type="checkbox" class="book-checkbox" value="Automation" data-price="1250">
             <img src="_robot.png" class="book-image" alt="Automation Book">
             <span>Automation (₱1250)</span>
           </label>
         </div>
         <div class="book-option">
           <label>
-            <input type="checkbox" class="book-checkbox" value="internet" data-price="1250">
+            <input type="checkbox" class="book-checkbox" value="Internet" data-price="1250">
             <img src="_globe.png" class="book-image" alt="Internet Book">
             <span>Internet (₱1250)</span>
           </label>
         </div>
         <div class="book-option">
           <label>
-            <input type="checkbox" class="book-checkbox" value="education" data-price="1250">
+            <input type="checkbox" class="book-checkbox" value="Education" data-price="1250">
             <img src="_education.png" class="book-image" alt="Education Book">
             <span>Education (₱1250)</span>
           </label>
         </div>
         <div class="book-option">
           <label>
-            <input type="checkbox" class="book-checkbox" value="technology" data-price="1250">
+            <input type="checkbox" class="book-checkbox" value="Technology" data-price="1250">
             <img src="_brain.png" class="book-image" alt="Technology Book">
             <span>Technology (₱1250)</span>
           </label>
         </div>
         <div class="book-option full-series">
           <label>
-            <input type="checkbox" class="book-checkbox" value="full_series" data-price="4000">
+            <input type="checkbox" class="book-checkbox" value="Full_Series" data-price="4000">
             <img src="_robot-earth.png" class="book-image" alt="Full Series">
             <span>Full Series (₱4000)</span>
           </label>
@@ -94,44 +94,44 @@
   </div>
 
   <script>
-    const checkboxes = document.querySelectorAll('.book-checkbox');
-    const totalCostDisplay = document.querySelector('.total-cost');
+    const checkboxes = document.querySelectorAll('.book-checkbox'); //select all checkboxes class
+    const totalCostDisplay = document.querySelector('.total-cost'); //select all total cost class
 
     function updateTotalCost() {
       let totalCost = 0;
       checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          totalCost += parseInt(checkbox.getAttribute('data-price'));
+        if (checkbox.checked) { //check boxes if checked
+          totalCost += parseInt(checkbox.getAttribute('data-price')); //if yes, change the string value of data price to num and add
         }
       });
-      totalCostDisplay.textContent = `Total Cost: ₱${totalCost}`;
+      totalCostDisplay.textContent = `Total Cost: ₱${totalCost}`; //display
 
     }
 
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', updateTotalCost);
+      checkbox.addEventListener('change', updateTotalCost); //trigger, if checkboxes is checked/unchecked run updateTotalCost function
     });
 
-    document.getElementById('orderForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const selectedBooks = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-      const paymentMethod = document.getElementById('payment').value;
+    document.getElementById('orderForm').addEventListener('submit', function (event) { //trigger, when submit is clicked, run event
+      event.preventDefault(); //instead of default refresh when submitted, dont refresh
+      const name = document.getElementById('name').value; //get value based on input
+      const selectedBooks = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value); //create array of all checkboxes div, filter those who are checked, based on those that are checked get the "value"
+      const paymentMethod = document.getElementById('payment').value; //same with name
 
       let totalCost = 0;
-      selectedBooks.forEach(book => {
-        const bookPrice = document.querySelector(`input[value="${book}"]`).getAttribute('data-price');
-        totalCost += parseInt(bookPrice);
+      selectedBooks.forEach(book => { //check each value inside the array
+        const bookPrice = document.querySelector(`input[value="${book}"]`).getAttribute('data-price'); //search the doc for the match value and get its data price
+        totalCost += parseInt(bookPrice); //convert data price from string to num, then add
       });
 
       if (paymentMethod === 'card' || paymentMethod === 'ewallet') {
         alert('Sorry, Debit/Credit Card and E-Wallet options are not currently working.');
-        return;
+        return; //if choice is card/ewallet just pop the alert
       }
 
-      const booksMessage = selectedBooks.length === 1
-        ? `${selectedBooks[0].replace('_', ' ')}`
-        : selectedBooks.map(b => b.replace('_', ' ')).join(', ');
+      const booksMessage = selectedBooks.length === 1 //check if the value inside the array is exactly 1
+        ? `${selectedBooks[0].replace('_', ' ')}` //if 1, change _ with space
+        : selectedBooks.map(b => b.replace('_', ' ')).join(', '); //else, still do the change but connect each value as 1 separated by ","
 
       const confirmationMessage = `
         <div class="confirmation-message">
@@ -141,7 +141,7 @@
         </div>
       `;
 
-      document.querySelector('.wrapper').innerHTML = confirmationMessage;
+      document.querySelector('.wrapper').innerHTML = confirmationMessage; //look for div class wrapper, and delete and change it with the confirmationMessage
     });
     /* Luzana, Emmanuelle Angelo */
   </script>
